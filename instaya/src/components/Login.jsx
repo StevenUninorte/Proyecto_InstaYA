@@ -2,7 +2,6 @@ import '/src/App.css'
 import React from 'react'
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap"
 import logo from '/images/logo.jpeg'
-import EncabezadoLogin from './layout/EncabezadoLogin';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Login() {  

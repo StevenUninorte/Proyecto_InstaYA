@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 function EncabezadoLogin() {
   return (
       <Navbar bg="warning" expand="lg">
-        <Container>
+        <Container id="containerBrand">
           <Navbar.Brand href="/">InstaYA</Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
