@@ -4,11 +4,13 @@ import { Col, Button, Row, Container, Card, Form } from "react-bootstrap"
 import logo from '/images/logo.jpeg'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEffect } from 'react'
+import EncabezadoLogin from './layout/EncabezadoLogin'
 
 function Login() {  
   useEffect(()=>{document.title = "Login"})
   return (
     <>
+      <EncabezadoLogin/>
       <div>
         <Container>
           <Row className="vh-90 d-flex justify-content-center align-items-center" id="login">
