@@ -3,9 +3,10 @@ import React from 'react'
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap"
 import logo from '/images/logo.jpeg'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { useEffect } from 'react'
 
 function Login() {  
-
+  useEffect(()=>{document.title = "Login"})
   return (
     <>
       <div>
@@ -48,7 +49,7 @@ function Login() {
                     <div className="mt-3">
                         <p className="mb-0  text-center">
                         Si no estas registrado?{" "}
-                          <a href="{''}" className="text-warning fw-bold">
+                          <a href="/registro" className="text-warning fw-bold">
                           Crea una cuenta
                           </a>
                         </p>
