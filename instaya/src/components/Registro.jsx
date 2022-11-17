@@ -66,7 +66,7 @@ function Registro() {
                         </Form.Group>
 
                         <div className="d-grid">
-                          <Button variant="warning" type="submit" onSubmit={()=>verificarPasswords()}
+                          <Button variant="warning" type="submit" onSubmit={()=>verificarPasswords()} //Esta parte de onSubmit y llamado a funcion aun no hace nada
                             >
                                 Registrar
                           </Button>
@@ -85,7 +85,7 @@ function Registro() {
 }
 export default Registro
 
-function verificarPasswords() {
+function verificarPasswords() { //Esta funcion aún no hace nada
  
     // Acá va el código 
 
