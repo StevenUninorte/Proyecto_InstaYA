@@ -1,13 +1,25 @@
 import '/src/App.css'
 import React from 'react'
-import { Col, Button, Row, Container, Card, Form } from "react-bootstrap"
+import { Col, Button, Row, Container, Card, Form, InputGroup} from "react-bootstrap"
 import logo from '/images/logo.jpeg'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import EncabezadoLogin from './layout/EncabezadoLogin'
 
 function Login() {  
   useEffect(()=>{document.title = "Login"})
+
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
   return (
     <>
       <EncabezadoLogin/>
@@ -15,27 +27,35 @@ function Login() {
         <Container>
           <Row className="vh-90 d-flex justify-content-center align-items-center" id="login">
             <Col md={8} lg={6} xs={12}>
-              <div className="border border-3 border-warning"></div>
               <Card className="shadow" >
                 <Card.Body>
                   <div className="mb-0 mt-0">
                     <img src={logo} width="146" height="128"/>  
                       <p className=" mb-3">¡Por favor, introduce tu usuario y contraseña!!</p>
                     <div className="mb-1">
-                    <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                          <Form.Label className="text-center">
-                            USUARIO
-                          </Form.Label>
-                          <Form.Control type="email" placeholder="Ingresa tu Correo Electrónico" />
+                    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                    <Form.Group  className="mb-2" md="4" controlId="validationCustomUsername">
+                          <Form.Label>Usuario</Form.Label>
+                          <InputGroup hasValidation>
+                            <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+                            <Form.Control
+                              type="text"
+                              placeholder="Ingresa tu correo electrónico"
+                              aria-describedby="inputGroupPrepend"
+                              required
+                            />
+                            <Form.Control.Feedback type="invalid">
+                              El usuario debe ser un correo.
+                            </Form.Control.Feedback>
+                          </InputGroup>
                         </Form.Group>
-
+                      
                         <Form.Group
                           className="mb-3"
                           controlId="formBasicPassword"
                         >
-                          <Form.Label>CONTRASEÑA</Form.Label>
-                          <Form.Control type="password" placeholder="Ingresa tu Contraseña" />
+                          <Form.Label>Contraseña</Form.Label>
+                          <Form.Control required type="password" placeholder="Ingresa tu Contraseña" />
                         </Form.Group>
                         <Form.Group
                           className="mb-3"

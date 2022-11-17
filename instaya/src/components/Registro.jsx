@@ -1,6 +1,6 @@
 import '/src/App.css'
 import React from 'react'
-import { Col, Button, Row, Container, Card, Form, Alert } from "react-bootstrap"
+import { Col, Button, Row, Container, Card, Form, Alert, InputGroup } from "react-bootstrap"
 import logo from '/images/logo.jpeg'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState, useEffect } from 'react'
@@ -8,65 +8,103 @@ import EncabezadoLogin from './layout/EncabezadoLogin'
 
 function Registro() {  
   useEffect(()=>{document.title = "Registro"})
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
+
   return (
     <>
       <EncabezadoLogin/>
       <div>
         <Container>
-          <Row className="vh-90 d-flex justify-content-center align-items-center" id="login">
+          <Row className="vh-90 d-flex justify-content-center align-items-center" id="containerRegistro">
             <Col md={8} lg={6} xs={12}>
-              <div className="border border-3 border-warning"></div>
               <Card className="shadow" >
                 <Card.Body>
                   <div className="mb-0 mt-0">
                     <img src={logo} width="146" height="128"/>  
                       <p className=" mb-3">¡¡Por favor, diligencia el formulario de registro!!</p>
                     <div className="mb-1">
-                    <Form>
+                    <Form noValidate validated={validated} onSubmit={handleSubmit}>
                         <Form.Group className="mb-2" controlId="formBasicName">
                           <Form.Label className="text-center">
-                            NOMBRES Y APELLIDOS
+                            Nombres y apellidos
                           </Form.Label>
                           <Form.Control 
+                          required
                           type="text" 
                           placeholder="Ingresa tu nombre completo" />
                         </Form.Group>
-
-                        <Form.Group className="mb-2" controlId="formBasicEmail">
-                          <Form.Label className="text-center">
-                            USUARIO
-                          </Form.Label>
-                          <Form.Control type="email" placeholder="Ingresa tu Correo Electrónico" />
+                        <Form.Group  className="mb-2" md="4" controlId="validationCustomUsername">
+                          <Form.Label>Usuario</Form.Label>
+                          <InputGroup hasValidation>
+                            <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+                            <Form.Control
+                              type="text"
+                              placeholder="Ingresa tu correo electrónico"
+                              aria-describedby="inputGroupPrepend"
+                              required
+                            />
+                            <Form.Control.Feedback type="invalid">
+                              El usuario debe ser un correo.
+                            </Form.Control.Feedback>
+                          </InputGroup>
                         </Form.Group>
 
                         <Form.Group
                           className="mb-2"
                           //controlId="formBasicPassword"
                         >
-                          <Form.Label>CONTRASEÑA</Form.Label>
-                          <Form.Control type="password" placeholder="Ingresa tu Contraseña" id="pass1"/>
+                          <Form.Label>Contraseña</Form.Label>
+                          <Form.Control 
+                          required
+                          type="password" 
+                          placeholder="Ingresa tu Contraseña" 
+                          id="pass1"/>
                         </Form.Group>
                         <Form.Group
+                          required
                           className="mb-3"
                           controlId="formBasicCheckbox"
                         >
                         </Form.Group>
 
                         <Form.Group
-                          className="mb-3"
+                          className="mb-2"
                           //controlId="formBasicPassword"
                         >
-                          <Form.Label>CONFIRMACION CONTRASEÑA</Form.Label>
-                          <Form.Control type="password" placeholder="Digita nuevamente tu Contraseña" id="pass2"/>
+                          <Form.Label>Confirmación contraseña</Form.Label>
+                          <Form.Control 
+                          required
+                          type="password" 
+                          placeholder="Digita nuevamente tu Contraseña" 
+                          id="pass2"/>
                         </Form.Group>
                         <Form.Group
-                          className="mb-3"
+                          className="mb-4"
                           controlId="formBasicCheckbox"
                         >
                         </Form.Group>
-
+                        <Form.Group className="mb-4">
+                            <div className="border d-flex align-items-center">
+                            <Form.Check
+                            required
+                            label="Aceptar terminos y condiciones"
+                            feedback="Debes aceptar los terminos y condiciones para continuar."
+                            feedbackType="invalid"
+                            />
+                            </div>
+                        </Form.Group>
                         <div className="d-grid">
-                          <Button variant="warning" type="submit" onSubmit={()=>verificarPasswords()} //Esta parte de onSubmit y llamado a funcion aun no hace nada
+                          <Button variant="warning" type="submit" //Esta parte de onSubmit y llamado a funcion aun no hace nada
                             >
                                 Registrar
                           </Button>
@@ -84,27 +122,3 @@ function Registro() {
   );
 }
 export default Registro
-
-function verificarPasswords() { //Esta funcion aún no hace nada
- 
-    // Acá va el código 
-
-    pass1 = document.getElementById('pass1');
-    pass2 = document.getElementById('pass2');
-
-    if (pass1.value != pass2.value) {
- 
-        // Si las constraseñas no coinciden mostramos un mensaje
-        <Alert key="danger" variant="danger">
-          Las contraseñas no coinciden!
-        </Alert>
-     
-        return false;
-    } else {
-        <Alert key="success" variant="success">
-          Las contraseñas coinciden!
-        </Alert>
-        return true
-    }
- 
-}
