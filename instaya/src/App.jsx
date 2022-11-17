@@ -1,4 +1,5 @@
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Login from "./components/Login"
 import {
   BrowserRouter as Router,
@@ -6,13 +7,16 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Brandbar from './components/layout/Brandbar';
+import EncabezadoLogin from './components/layout/EncabezadoLogin';
 
 
 function App() {  
 
   return (
     <>
+      <div>
+      <EncabezadoLogin/>
+      </div>
       <div className="App">
         <Router>
           <div>
