@@ -41,10 +41,10 @@
 }
 
 #login{
-  margin-top:5%;
+  margin-top:2%;
 }
 
-#containerRegistro{
+#Registro{
   margin-top:2%
 }
 
@@ -52,4 +52,25 @@
   max-width: none;
   margin-left: 1%;
   margin-right: 1%;
+}
+
+#containerLogin{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#containerRegistro{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#containerListadoOrdenes{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

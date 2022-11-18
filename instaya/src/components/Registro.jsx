@@ -1,7 +1,7 @@
 import '/src/App.css'
 import React from 'react'
 import { Col, Button, Row, Container, Card, Form, Alert, InputGroup } from "react-bootstrap"
-import logo from '/images/logo.jpeg'
+import logo from '/images/logoNaranja.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState, useEffect } from 'react'
 import EncabezadoLogin from './layout/EncabezadoLogin'
@@ -24,13 +24,13 @@ function Registro() {
     <>
       <EncabezadoLogin/>
       <div>
-        <Container>
-          <Row className="vh-90 d-flex justify-content-center align-items-center" id="containerRegistro">
+        <Container id="containerRegistro">
+          <Row className="vh-90 d-flex justify-content-center align-items-center" id="Registro">
             <Col md={8} lg={6} xs={12}>
               <Card className="shadow" >
                 <Card.Body>
-                  <div className="mb-0 mt-0">
-                    <img src={logo} width="146" height="128"/>  
+                  <div className="mb-0 mt-0" as={Col}>
+                    <img src={logo} width="120"/>  
                       <p className=" mb-3">¡¡Por favor, diligencia el formulario de registro!!</p>
                     <div className="mb-1">
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -72,7 +72,7 @@ function Registro() {
                         </Form.Group>
                         <Form.Group
                           required
-                          className="mb-3"
+                          className="mb-2"
                           controlId="formBasicCheckbox"
                         >
                         </Form.Group>
@@ -104,7 +104,7 @@ function Registro() {
                             </div>
                         </Form.Group>
                         <div className="d-grid">
-                          <Button variant="warning" type="submit" //Esta parte de onSubmit y llamado a funcion aun no hace nada
+                          <Button variant="warning" type="submit" 
                             >
                                 Registrar
                           </Button>

@@ -1,7 +1,7 @@
 import '/src/App.css'
 import React from 'react'
 import { Col, Button, Row, Container, Card, Form, InputGroup} from "react-bootstrap"
-import logo from '/images/logo.jpeg'
+import logo from '/images/logoNaranja.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEffect, useState } from 'react'
 import EncabezadoLogin from './layout/EncabezadoLogin'
@@ -24,13 +24,13 @@ function Login() {
     <>
       <EncabezadoLogin/>
       <div>
-        <Container>
+        <Container id="containerLogin">
           <Row className="vh-90 d-flex justify-content-center align-items-center" id="login">
             <Col md={8} lg={6} xs={12}>
               <Card className="shadow" >
                 <Card.Body>
                   <div className="mb-0 mt-0">
-                    <img src={logo} width="146" height="128"/>  
+                    <img src={logo} width="120"/>  
                       <p className=" mb-3">¡Por favor, introduce tu usuario y contraseña!!</p>
                     <div className="mb-1">
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -70,7 +70,7 @@ function Login() {
                       </Form>
                     <div className="mt-3">
                         <p className="mb-0  text-center">
-                        Si no estas registrado?{" "}
+                          Si no estas registrado?{" "}
                           <a href="/registro" className="text-warning fw-bold">
                           Crea una cuenta
                           </a>

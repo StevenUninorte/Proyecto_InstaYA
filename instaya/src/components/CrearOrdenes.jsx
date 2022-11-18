@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Col, Button, Row, Container, Card, Form, Alert } from "react-bootstrap"
 import InputGroup from 'react-bootstrap/InputGroup';
 import EncabezadoGeneral from './layout/EncabezadoGeneral';
+import logo from '/images/logoNaranja.png'
 
 function CrearOrdenes() {
     useEffect(()=>{document.title = "Crear Ordenes"})
@@ -24,9 +25,23 @@ function CrearOrdenes() {
             <Row className="d-flex justify-content-center align-items-center" id="login">
                 <Col lg={8}>
                     <Card className="shadow" >
-                    <h3>Creación de orden</h3>
                     <Card.Body>
                         <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                        <Row>
+                            <Col className='mb-3' md="3">
+                                <img src={logo} width="100"/>
+                            </Col>
+                            <Col className='mb-3'>
+                                <Container>
+                                    <h3>Creación de Orden</h3>                                    
+                                </Container>
+                            </Col>  
+                            <Col className='mb-3' md="3">
+                                <br></br>
+                                <Button variant="warning" type="submit">Crear Orden</Button>
+                            </Col>                          
+                        </Row>
+                        
                         <Row className="mb-3">
                             <Form.Group as={Col}  controlId="validationCustom01">
                             <Form.Label>Fecha</Form.Label>
@@ -129,7 +144,6 @@ function CrearOrdenes() {
                             <Form.Control type="text" placeholder="Ciudad de entrega" required />
                             </Form.Group>
                         </Row>
-                        <Button variant="warning" type="submit">Crear Orden</Button>
                         </Form>
                     </Card.Body>
                     </Card>
