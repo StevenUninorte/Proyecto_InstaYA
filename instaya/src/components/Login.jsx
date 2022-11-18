@@ -10,15 +10,17 @@ function Login() {
   useEffect(()=>{document.title = "Login"})
 
   const [validated, setValidated] = useState(false);
+  const [ruta, setRuta] = useState(null);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
-    }
-
+    } 
     setValidated(true);
+    setRuta("/listado_ordenes");
+    
   };
   return (
     <>
@@ -63,7 +65,7 @@ function Login() {
                         >
                         </Form.Group>
                         <div className="d-grid">
-                          <Button variant="warning" type="submit">
+                          <Button variant="warning" type="submit" href={ruta}>
                             Ingresar
                           </Button>
                         </div>

@@ -9,6 +9,7 @@ import EncabezadoLogin from './layout/EncabezadoLogin'
 function Registro() {  
   useEffect(()=>{document.title = "Registro"})
   const [validated, setValidated] = useState(false);
+  const [ruta, setRuta] = useState(null);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -18,6 +19,7 @@ function Registro() {
     }
 
     setValidated(true);
+    setRuta("/login")
   };
 
   return (
@@ -104,7 +106,7 @@ function Registro() {
                             </div>
                         </Form.Group>
                         <div className="d-grid">
-                          <Button variant="warning" type="submit" 
+                          <Button variant="warning" type="submit" href={ruta} 
                             >
                                 Registrar
                           </Button>

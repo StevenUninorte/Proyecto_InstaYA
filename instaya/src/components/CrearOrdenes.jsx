@@ -7,6 +7,7 @@ import logo from '/images/logoNaranja.png'
 function CrearOrdenes() {
     useEffect(()=>{document.title = "Crear Ordenes"})
   const [validated, setValidated] = useState(false);
+  const [ruta, setRuta] = useState(null);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -16,6 +17,7 @@ function CrearOrdenes() {
     }
 
     setValidated(true);
+    setRuta("/listado_ordenes")
   };
 
   return (
@@ -38,7 +40,7 @@ function CrearOrdenes() {
                             </Col>  
                             <Col className='mb-3' md="3">
                                 <br></br>
-                                <Button variant="warning" type="submit">Crear Orden</Button>
+                                <Button variant="warning" type="submit" href={ruta}>Crear Orden</Button>
                             </Col>                          
                         </Row>
                         

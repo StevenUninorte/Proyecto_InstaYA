@@ -7,6 +7,7 @@ import logo from '/images/logoNaranja.png'
 function ActualizarOrdenes() {
     useEffect(()=>{document.title = "Actualizar Ordenes"})
   const [validated, setValidated] = useState(false);
+  const [ruta, setRuta] = useState(null);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -16,6 +17,7 @@ function ActualizarOrdenes() {
     }
 
     setValidated(true);
+    setRuta("/listado_ordenes")
   };
 
   return (
@@ -39,7 +41,7 @@ function ActualizarOrdenes() {
                             </Col>  
                             <Col className='mb-3' md="3">
                                 <br></br>
-                                <Button variant="warning" type="submit">Actualizar Orden</Button>
+                                <Button variant="warning" type="submit" href={ruta}>Actualizar Orden</Button>
                             </Col>
                         </Row>
                         
@@ -66,7 +68,6 @@ function ActualizarOrdenes() {
                             <Form.Group md="4"  controlId="validationCustom01">
                             <Form.Label>Estado del pedido</Form.Label>
                             <Form.Select md="2" aria-label="Default select example">
-                                <option>Estado</option>   //Poner lo que viene de la api
                                 <option value="Guardado">Guardado</option>
                                 <option value="Cancelado">Cancelado</option>
                                 <option value="Cumplido">Cumplido</option>

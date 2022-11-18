@@ -26,7 +26,7 @@ function ListadoOrdenes(){
                             </Col>  
                             <Col className='mb-3' md="2">
                                 <br></br>
-                                <Button variant="warning" type="submit">Crear Orden</Button>
+                                <Button variant="warning" type="submit" href="/crear_ordenes">Crear Orden</Button>
                             </Col>                          
                         </Row>
                         <Table responsive striped bordered hover variant="light">
