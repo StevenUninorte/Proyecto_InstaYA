@@ -65,14 +65,25 @@ function ActualizarOrdenes() {
                         </Row>
 
                         <Row className="mb-3">
-                            <Form.Group md="4"  controlId="validationCustom01">
-                            <Form.Label>Estado del pedido</Form.Label>
-                            <Form.Select md="2" aria-label="Default select example">
-                                <option value="Guardado">Guardado</option>
-                                <option value="Cancelado">Cancelado</option>
-                                <option value="Cumplido">Cumplido</option>
-                            </Form.Select>
-                            </Form.Group>
+                            <Col className='mb-3' md="3">
+                               
+                            </Col>
+                            <Col className='mb-3'>
+                                <Container>
+                                    <Form.Group md="4"  controlId="validationCustom01">
+                                    <Form.Label>Estado del pedido</Form.Label>
+                                    <Form.Select md="2" aria-label="Default select example">
+                                        <option value="Guardado">Guardado</option>
+                                        <option value="Cancelado">Cancelado</option>
+                                        <option value="Cumplido">Cumplido</option>
+                                    </Form.Select>
+                                    </Form.Group>
+                                </Container>
+                            </Col>  
+                            <Col className='mb-3' md="3">
+                                
+                            </Col>
+                            
                         </Row>
 
                         <Row className='mb-3'>
