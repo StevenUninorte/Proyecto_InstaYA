@@ -49,17 +49,23 @@ function CrearOrdenes() {
                             <Form.Label>Fecha</Form.Label>
                             <Form.Control
                                 required
-                                type="text"
+                                type="date"
                                 placeholder="Ingresar la fecha en formato x"    //Definir formato                             
                             />
+                                <Form.Control.Feedback type="invalid">
+                                    No ha ingresado la fecha.
+                                </Form.Control.Feedback>
                             </Form.Group>
                             <Form.Group as={Col} md="4" controlId="validationCustom02">
                             <Form.Label>Hora</Form.Label>
                             <Form.Control
                                 required
-                                type="text"
+                                type="time"
                                 placeholder="Ingresar hora en formato militar"                                
                             />
+                                <Form.Control.Feedback type="invalid">
+                                    No ha ingresado la hora.
+                                </Form.Control.Feedback>
                             </Form.Group>
                         </Row>
 
@@ -74,7 +80,11 @@ function CrearOrdenes() {
                                 aria-describedby="basic-addon2"
                                 />
                                 <InputGroup.Text id="basic-addon2">metros</InputGroup.Text>
+                                <Form.Control.Feedback type="invalid">
+                                    No ha ingresado el ancho.
+                                </Form.Control.Feedback>
                             </InputGroup>
+                            
                             </Form.Group>
                             <Form.Group as={Col} md="3">
                             <Form.Label>Largo</Form.Label>
@@ -86,7 +96,10 @@ function CrearOrdenes() {
                                 aria-describedby="basic-addon2"
                                 />
                                 <InputGroup.Text id="basic-addon2">metros</InputGroup.Text>
-                            </InputGroup>
+                                <Form.Control.Feedback type="invalid">
+                                    No ha ingresado el largo.
+                                </Form.Control.Feedback>
+                            </InputGroup>                                
                             </Form.Group>
                             <Form.Group as={Col} md="3">
                             <Form.Label>Alto</Form.Label>
@@ -98,6 +111,9 @@ function CrearOrdenes() {
                                 aria-describedby="basic-addon2"
                                 />
                                 <InputGroup.Text id="basic-addon2">metros</InputGroup.Text>
+                                <Form.Control.Feedback type="invalid">
+                                    No ha ingresado el alto.
+                                </Form.Control.Feedback>
                             </InputGroup>
                             </Form.Group>
                             <Form.Group as={Col} md="3">
@@ -110,6 +126,9 @@ function CrearOrdenes() {
                                 aria-describedby="basic-addon2"
                                 />
                                 <InputGroup.Text id="basic-addon2">Kg</InputGroup.Text>
+                                <Form.Control.Feedback type="invalid">
+                                    No ha ingresado el peso.
+                                </Form.Control.Feedback>
                             </InputGroup>
                             </Form.Group>
                         </Row>
@@ -117,11 +136,17 @@ function CrearOrdenes() {
                         <Row className="mb-3">
                             <Form.Group as={Col} md="6" controlId="validationCustom03">
                             <Form.Label>Dirección de Recogida</Form.Label>
-                            <Form.Control type="text" placeholder="Direccion de recogida" required />                            
+                            <Form.Control type="text" placeholder="Direccion de recogida" required /> 
+                                <Form.Control.Feedback type="invalid">
+                                    No ha ingresado la dirección de recogida.
+                                </Form.Control.Feedback>                           
                             </Form.Group>
                             <Form.Group as={Col} md="6" controlId="validationCustom04">
                             <Form.Label>Ciudad de Recogida</Form.Label>
                             <Form.Control type="text" placeholder="Ciudad de recogida" required />
+                                <Form.Control.Feedback type="invalid">
+                                    No ha ingresado la ciudad de recogida.
+                                </Form.Control.Feedback> 
                             </Form.Group>
                         </Row>
 
@@ -129,10 +154,16 @@ function CrearOrdenes() {
                             <Form.Group as={Col} md="6" controlId="validationCustom03">
                             <Form.Label>Nombre del destinatario</Form.Label>
                             <Form.Control type="text" placeholder="Nombre del destinatario" required />                            
+                                <Form.Control.Feedback type="invalid">
+                                    No ha ingresado el nombre de destinatario.
+                                </Form.Control.Feedback> 
                             </Form.Group>
                             <Form.Group as={Col} md="6" controlId="validationCustom04">
                             <Form.Label>Cédula/Nit del Destinatario</Form.Label>
                             <Form.Control type="text" placeholder="Identificacion del destinatario (sin puntos)" required />
+                                <Form.Control.Feedback type="invalid">
+                                    No ha ingresado la cédula.
+                                </Form.Control.Feedback> 
                             </Form.Group>
                         </Row>
 
@@ -140,10 +171,16 @@ function CrearOrdenes() {
                             <Form.Group as={Col} md="6" controlId="validationCustom03">
                             <Form.Label>Dirección de Entrega</Form.Label>
                             <Form.Control type="text" placeholder="Direccion de entrega" required />                            
+                                <Form.Control.Feedback type="invalid">
+                                    No ha ingresado la dirección de entrega.
+                                </Form.Control.Feedback> 
                             </Form.Group>
                             <Form.Group as={Col} md="6" controlId="validationCustom04">
                             <Form.Label>Ciudad de Entrega</Form.Label>
                             <Form.Control type="text" placeholder="Ciudad de entrega" required />
+                            <Form.Control.Feedback type="invalid">
+                                    No ha ingresado la ciudad de entrega.
+                                </Form.Control.Feedback> 
                             </Form.Group>
                         </Row>
                         </Form>

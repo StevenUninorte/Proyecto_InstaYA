@@ -50,7 +50,7 @@ function ActualizarOrdenes() {
                             <Form.Label>Fecha</Form.Label>
                             <Form.Control
                                 required
-                                type="text"
+                                type="date"
                                 placeholder="Ingresar la fecha en formato x"    //Definir formato                             
                             />
                             </Form.Group>
@@ -58,7 +58,7 @@ function ActualizarOrdenes() {
                             <Form.Label>Hora</Form.Label>
                             <Form.Control
                                 required
-                                type="text"
+                                type="time"
                                 placeholder="Ingresar hora en formato militar"                                
                             />
                             </Form.Group>
