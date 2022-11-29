@@ -1,15 +1,12 @@
-import mongoose from "mongoose";
-const url='mongodb://localhost:27017/InstaYA';
-//const url='mongodb+srv://admin:admin@cluster0.cm9ilpq.mongodb.net/test';
+import mongoose from "mongoose"
 
-mongoose.connect(url);
+const conn = async () => {
+    try{
+        await mongoose.connect(process.env.DB_URI)
+            .then(db=> console.log("¡La conexion con mongo fue exitosa!"))
+    }catch(error){
+        console.log("La conexion falló =>" +  error.message);
+    }
+};
 
-const db = mongoose.connection;
-db.on('open',()=>{
-    console.log("¡La conexion con mongo fue exitosa!");
-});
-db.on('err', ()=>{
-    console.log("La conexion falló");
-});
-
-export default db;
+export default conn;
