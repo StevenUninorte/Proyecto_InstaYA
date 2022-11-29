@@ -50,7 +50,7 @@ function CrearOrdenes() {
                             <Form.Control
                                 required
                                 type="date"
-                                placeholder="Ingresar la fecha en formato x"    //Definir formato                             
+                                placeholder="Ingresar la fecha"    //Definir formato                             
                             />
                                 <Form.Control.Feedback type="invalid">
                                     No ha ingresado la fecha.
@@ -61,7 +61,7 @@ function CrearOrdenes() {
                             <Form.Control
                                 required
                                 type="time"
-                                placeholder="Ingresar hora en formato militar"                                
+                                placeholder="Ingresar hora"                                
                             />
                                 <Form.Control.Feedback type="invalid">
                                     No ha ingresado la hora.

@@ -24,8 +24,8 @@ function ActualizarOrdenes() {
     <>
         <EncabezadoGeneral/>
         <Container>
-            <Row className="d-flex justify-content-center align-items-center mt-4" id="containerRegistro">
-                <Col lg={14}>
+            <Row className="d-flex justify-content-center align-items-center mt-4" id="login">
+                <Col lg={8}>
                     <Card className="shadow" >
                     <Card.Body>
                         <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -51,7 +51,7 @@ function ActualizarOrdenes() {
                             <Form.Control
                                 required
                                 type="date"
-                                placeholder="Ingresar la fecha en formato x"    //Definir formato                             
+                                placeholder="Ingresar la fecha"    //Definir formato                             
                             />
                             </Form.Group>
                             <Form.Group as={Col} md="4" controlId="validationCustom02">
@@ -59,7 +59,7 @@ function ActualizarOrdenes() {
                             <Form.Control
                                 required
                                 type="time"
-                                placeholder="Ingresar hora en formato militar"                                
+                                placeholder="Ingresar hora"                                
                             />
                             </Form.Group>
                         </Row>
