@@ -1,5 +1,5 @@
 import express from 'express';
-import {createEnvio, deleteEnvio, getAllEnvios, getEnvio, updateEnvio} from '../controllers/controller.js';
+import {createEnvio, deleteEnvio, getAllEnvios, getEnvio, updateEnvio} from '../controllers/privateController.js';
 
 const router = express.Router();
 
@@ -9,13 +9,10 @@ router.get('/', getAllEnvios);
 //mostrar un solo envio buscado por id
 router.get('/:id', getEnvio);
 //crear un envio
-router.post('/', createEnvio);
+router.post('/create', createEnvio);
 //actualizar un envio
-router.put('/:id', updateEnvio);
+router.put('/update/:id', updateEnvio);
 //borrar un envio
-router.delete('/:id', deleteEnvio);
-
-
+router.delete('/delete/:id', deleteEnvio);
 
 export default router;
-

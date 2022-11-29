@@ -50,7 +50,7 @@ function Registro() {
                           <InputGroup hasValidation>
                             <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
                             <Form.Control
-                              type="text"
+                              type="email"
                               placeholder="Ingresa tu correo electrónico"
                               aria-describedby="inputGroupPrepend"
                               required
@@ -79,22 +79,6 @@ function Registro() {
                         >
                         </Form.Group>
 
-                        <Form.Group
-                          className="mb-2"
-                          //controlId="formBasicPassword"
-                        >
-                          <Form.Label>Confirmación contraseña</Form.Label>
-                          <Form.Control 
-                          required
-                          type="password" 
-                          placeholder="Digita nuevamente tu Contraseña" 
-                          id="pass2"/>
-                        </Form.Group>
-                        <Form.Group
-                          className="mb-4"
-                          controlId="formBasicCheckbox"
-                        >
-                        </Form.Group>
                         <Form.Group className="mb-4">
                             <div className="border d-flex align-items-center">
                             <Form.Check
