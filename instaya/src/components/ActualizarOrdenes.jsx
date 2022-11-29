@@ -20,6 +20,8 @@ function ActualizarOrdenes() {
     setRuta("/listado_ordenes")
   };
 
+  
+
   return (
     <>
         <EncabezadoGeneral/>
