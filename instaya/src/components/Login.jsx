@@ -11,16 +11,24 @@ function Login() {
 
   const [validated, setValidated] = useState(false);
   const [ruta, setRuta] = useState(null);
+  const [usuario, setUsuario] = useState("")
+  const [contrasena, setContrasena] = useState("")
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
-    } 
+      console.log("entra al checkvlidity = false")
+      console.log("Ruta: " + ruta)
+    } else {
+      setRuta("/listado_ordenes");
+    }
     setValidated(true);
-    setRuta("/listado_ordenes");
-    
+    if(usuario === ""){
+      return;
+    }
+    //setRuta("/listado_ordenes");
   };
   return (
     <>
@@ -36,12 +44,18 @@ function Login() {
                       <p className=" mb-3">¡Por favor, introduce tu usuario y contraseña!!</p>
                     <div className="mb-1">
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                    <Form.Group  className="mb-2" md="4" controlId="validationCustomUsername">
+                      <Form.Group  className="mb-2" md="4" controlId="validationCustomUsername"
+                        
+                        //value={formulario.usuario}
+                        onChange={(e)=> setUsuario(e.target.value)}
+                        value={usuario}>
                           <Form.Label>Usuario</Form.Label>
                           <InputGroup hasValidation>
-                            <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+                            <InputGroup.Text id="inputGroupPrepend"  
+                            >
+                            @</InputGroup.Text>
                             <Form.Control
-                              type="text"
+                              type="email"
                               placeholder="Ingresa tu correo electrónico"
                               aria-describedby="inputGroupPrepend"
                               required
@@ -55,9 +69,14 @@ function Login() {
                         <Form.Group
                           className="mb-3"
                           controlId="formBasicPassword"
+                          value={contrasena}
+                          onChange={(e)=> setContrasena(e.target.value)}
                         >
                           <Form.Label>Contraseña</Form.Label>
-                          <Form.Control required type="password" placeholder="Ingresa tu Contraseña" />
+                          <Form.Control 
+                          required 
+                          type="password" 
+                          placeholder="Ingresa tu Contraseña" />
                         </Form.Group>
                         <Form.Group
                           className="mb-3"
@@ -65,7 +84,7 @@ function Login() {
                         >
                         </Form.Group>
                         <div className="d-grid">
-                          <Button variant="warning" type="submit" href={ruta}>
+                          <Button variant="warning" type="submit">
                             Ingresar
                           </Button>
                         </div>
