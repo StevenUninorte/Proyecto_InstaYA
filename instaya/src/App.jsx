@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import Login from "./components/Login"
 import Registro from './components/Registro';
-import ValidationExample from './components/ValidationExample'
 import ListadoOrdenes from './components/ListadoOrdenes';
 import ActualizarOrdenes from './components/ActualizarOrdenes';
 import CrearOrdenes from './components/CrearOrdenes';
@@ -25,7 +24,6 @@ function App() {
               <Route path="/" element={<Login />}/>
               <Route path="/login" element={<Login />} />
               <Route path="/registro" element={<Registro />} />
-              <Route path="/validation" element={<ValidationExample />} />
               <Route path="/listado_ordenes" element={<ListadoOrdenes />} />
               <Route path="/crear_ordenes" element={<CrearOrdenes />} />
               <Route path="/actualizar_ordenes" element={<ActualizarOrdenes />} />
