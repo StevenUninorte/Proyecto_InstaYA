@@ -17,6 +17,9 @@ const envioSchema = new Schema(
         cc_nit_des:{type:Number},
         direccion_ent:{type:String},
         ciudad_ent:{type:String}
+    }, {
+        versionKey: false,
+        timestamps: true
     });
 
 export default mongoose.model('envios', envioSchema);

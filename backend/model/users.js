@@ -20,12 +20,7 @@ const userSchema = new Schema({
     }
   }, {
     versionKey: false,
-    timestamps: true,
-    toJSON: {
-      transform: (document, returned) => {
-        returned.id = returned._id
-      }
-    }
+    timestamps: true
   })
 
 export default model("users", userSchema);

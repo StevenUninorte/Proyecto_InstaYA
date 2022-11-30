@@ -22,10 +22,10 @@ function ListadoOrdenes() {
 
   const [ordenes, setOrdenes] = useState([]);
   useEffect(() => {
-    const fetchData = async () => {
+   const fetchData = async () => {
       try {
-        const response = await axios.get({
-          url: "http://127.0.0.1:5000/api/envios",
+        const response = await axios({
+          url: "http://localhost:5000/api/envios",
         });
 
         setOrdenes(response.data);

@@ -46,7 +46,7 @@ function CrearOrdenes() {
                         
                         <Row className="mb-3">
                             <Form.Group as={Col}  controlId="validationCustom01">
-                            <Form.Label>Fecha</Form.Label>
+                            <Form.Label>Fecha de recogida</Form.Label>
                             <Form.Control
                                 required
                                 type="date"
@@ -57,7 +57,7 @@ function CrearOrdenes() {
                                 </Form.Control.Feedback>
                             </Form.Group>
                             <Form.Group as={Col} md="4" controlId="validationCustom02">
-                            <Form.Label>Hora</Form.Label>
+                            <Form.Label>Hora de recogida</Form.Label>
                             <Form.Control
                                 required
                                 type="time"
