@@ -15,14 +15,40 @@ import EncabezadoGeneral from "./layout/EncabezadoGeneral";
 import logo from "/images/logoNaranja.png";
 import axios from "axios";
 
-const ListadoOrdenes = (_) => {
+function ListadoOrdenes() {
   const [ordenes, setOrdenes] = useState([]);
+
   useEffect(() => {
     document.title = "Listado Ordenes";
-    axios.get(`http://localhost:5000/api/envios/`)
-      .then((res) => setOrdenes(res.data));
-  },[]);
-  
+   const fetchData = async () => {
+      try {
+        const response = await axios.get({
+          url: "http://localhost:5000/api/envios",
+        });
+
+        setOrdenes(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  /*useEffect(
+        () =>
+          axios
+            .get(
+              "http://127.0.0.1:5000/api/envios"
+            )
+            .then((res) => {
+              setOrdenes(res.data);
+              console.log(res.data);
+              console.log(ordenes);
+            })
+            .catch((error) => console.log(error)),
+        []
+    )*/
   return (
     <>
       <EncabezadoGeneral />

@@ -1,5 +1,9 @@
 import envios from "../model/envios.js";
 
+
+export const mostrar = async(req, res)=>{
+  return res.json({mesage: "muestra de datos protegidos"});
+};
 //metodos para el crud
 
 //mostrar todos los envios: cada producto esta guardado en un documento
