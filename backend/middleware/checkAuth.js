@@ -1,4 +1,4 @@
-import jwt from "JsonWebToken";
+import jwt from "jsonwebtoken";
 
 export const checkAuth = (req, res, next) => {
     const token = req.cookies.access_token;
